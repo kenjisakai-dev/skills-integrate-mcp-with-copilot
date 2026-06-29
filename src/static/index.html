@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="top-user-menu">
+      <button id="user-menu-button" class="user-menu-button" aria-label="User menu">👤</button>
+      <div id="user-menu-panel" class="user-menu-panel hidden">
+        <p id="auth-status" class="auth-status">Not logged in</p>
+        <button id="open-login-button" type="button">Teacher Login</button>
+        <button id="logout-button" type="button" class="hidden">Logout</button>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="modal-content">
+        <h3 id="login-title">Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="teacher-username">Username:</label>
+            <input type="text" id="teacher-username" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-password">Password:</label>
+            <input type="password" id="teacher-password" required />
+          </div>
+          <div class="modal-actions">
+            <button type="submit">Login</button>
+            <button type="button" id="close-login-button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -37,6 +66,9 @@
           </div>
           <button type="submit">Sign Up</button>
         </form>
+        <p id="teacher-only-note" class="info-note hidden">
+          Only logged-in teachers can register or unregister students.
+        </p>
         <div id="message" class="hidden"></div>
       </section>
     </main>
